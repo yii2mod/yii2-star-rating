@@ -36,6 +36,8 @@ class StarRating extends InputWidget
 
     /**
      * Init widget, configure client options
+     * 
+     * @return void
      */
     public function init()
     {
@@ -46,7 +48,7 @@ class StarRating extends InputWidget
     /**
      * Render star rating
      *
-     * @return string|void
+     * @return string
      */
     public function run()
     {
