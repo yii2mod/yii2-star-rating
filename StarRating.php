@@ -24,6 +24,10 @@ use yii\helpers\Json;
  */
 class StarRating extends InputWidget
 {
+    /**
+     * Path to plugin images
+     */
+    const IMAGE_PATH = '/lib/images';
 
     /**
      * @var array client options
@@ -72,7 +76,7 @@ class StarRating extends InputWidget
     {
         $assetBundle = StarRatingAsset::register($this->view);
         $this->clientOptions['score'] = $this->hasModel() ? Html::getAttributeValue($this->model, $this->attribute) : $this->value;
-        $this->clientOptions['path'] = $assetBundle->baseUrl . '/lib/images';
+        $this->clientOptions['path'] = $assetBundle->baseUrl . self::IMAGE_PATH;
         if (!isset($this->clientOptions['scoreName']) && $this->hasModel()) {
             $this->clientOptions['scoreName'] = Html::getInputName($this->model, $this->attribute);
         }
