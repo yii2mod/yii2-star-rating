@@ -1,6 +1,8 @@
 Star Rating Widget for Yii 2
 ============================
-- Star Rating widget based on Raty extension https://github.com/wbotelhos/raty
+Star Rating widget based on Raty extension https://github.com/wbotelhos/raty
+
+[![Latest Stable Version](https://poser.pugx.org/yii2mod/yii2-star-rating/v/stable)](https://packagist.org/packages/yii2mod/yii2-star-rating) [![Total Downloads](https://poser.pugx.org/yii2mod/yii2-star-rating/downloads)](https://packagist.org/packages/yii2mod/yii2-star-rating) [![License](https://poser.pugx.org/yii2mod/yii2-star-rating/license)](https://packagist.org/packages/yii2mod/yii2-star-rating)
 
 Installation 
 ------------
