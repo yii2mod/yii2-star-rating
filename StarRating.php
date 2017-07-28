@@ -77,7 +77,9 @@ class StarRating extends InputWidget
     protected function configureClientOptions()
     {
         $assetBundle = StarRatingAsset::register($this->view);
-        $this->clientOptions['score'] = $this->hasModel() ? Html::getAttributeValue($this->model, $this->attribute) : $this->value;
+        if (!isset($this->clientOptions['score'])) {
+            $this->clientOptions['score'] = $this->hasModel() ? Html::getAttributeValue($this->model, $this->attribute) : $this->value;
+        }
         if (!isset($this->clientOptions['path'])) {
             $this->clientOptions['path'] = $assetBundle->baseUrl . $this->assetBundleImagePath;
         }
