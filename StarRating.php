@@ -2,25 +2,14 @@
 
 namespace yii2mod\rating;
 
-use yii\widgets\InputWidget;
-use Yii;
 use yii\helpers\Html;
 use yii\helpers\Json;
+use yii\widgets\InputWidget;
 
 /**
  * Class StarRating
- * @package yii2mod\rating
  *
- * Usage example:
- * ~~~
- * \yii2mod\rating\StarRating::widget([
- *       'name' => "input_name",
- *       'value' => 5,
- *       'clientOptions' => [
- *           // Your client options
- *       ]
- * ]);
- * ~~~
+ * @package yii2mod\rating
  */
 class StarRating extends InputWidget
 {
@@ -36,13 +25,12 @@ class StarRating extends InputWidget
 
     /**
      * Init widget, configure client options
-     *
-     * @return void
      */
     public function init()
     {
-        $this->configureClientOptions();
         parent::init();
+
+        $this->configureClientOptions();
     }
 
     /**
@@ -53,6 +41,7 @@ class StarRating extends InputWidget
     public function run()
     {
         $this->registerAssets();
+
         return Html::tag('div', '', $this->options);
     }
 
@@ -71,21 +60,21 @@ class StarRating extends InputWidget
 
     /**
      * Configure client options
-     *
-     * @return void
      */
     protected function configureClientOptions()
     {
         $assetBundle = StarRatingAsset::register($this->view);
+
         if (!isset($this->clientOptions['score'])) {
             $this->clientOptions['score'] = $this->hasModel() ? Html::getAttributeValue($this->model, $this->attribute) : $this->value;
         }
+
         if (!isset($this->clientOptions['path'])) {
             $this->clientOptions['path'] = $assetBundle->baseUrl . $this->assetBundleImagePath;
         }
+
         if (!isset($this->clientOptions['scoreName']) && $this->hasModel()) {
             $this->clientOptions['scoreName'] = Html::getInputName($this->model, $this->attribute);
         }
     }
-
 }
