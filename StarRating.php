@@ -54,7 +54,7 @@ class StarRating extends InputWidget
     {
         $view = $this->getView();
         $clientOptions = Json::encode($this->clientOptions);
-        $js = '$("div#' . $this->options['id'] . '").raty(' . $clientOptions . ');';
+        $js = 'jQuery("div#' . $this->options['id'] . '").raty(' . $clientOptions . ');';
         $view->registerJs($js);
     }
 
